@@ -1,0 +1,122 @@
+<div class="p-8">
+  <!-- Main Title -->
+  <h1 class="text-2xl font-medium text-gray-600 mb-6 mx-4" style="font-family: Arial, sans-serif;">
+    Input Fields
+  </h1>
+
+  <div class="flex gap-4 p-4 w-full m-4">
+    <!-- Column 1: Textfield -->
+    <div class="flex-1 flex flex-col gap-4">
+      <h2 class="text-lg font-medium text-gray-500" style="font-family: Arial, sans-serif;">
+        Text Field
+      </h2>
+
+      <!-- Username -->
+      <div class="w-64">
+        <app-textfield
+          [label]="'Username*'"
+          [placeholder]="'Type your username'"
+          [control]="usernameControl"
+          [size]="'sm'"
+          [color]="'primary'"
+          [helperText]="'Max 10 characters'"
+        ></app-textfield>
+      </div>
+
+      <!-- Firstname -->
+      <div class="w-64">
+        <app-textfield
+          [(ngModel)]="firstname"
+          [label]="'Firstname'"
+          [placeholder]="'Type your firstname'"
+          [size]="'sm'"
+          [color]="'primary'"
+          [helperText]="'Please enter your firstname'"
+          (valueChange)="onFirstnameChange($event)"
+        ></app-textfield>
+      </div>
+
+      <!-- Age -->
+      <div class="w-48">
+        <app-textfield
+          [label]="'Age*'"
+          [placeholder]="'Type your age'"
+          [control]="ageControl"
+          [size]="'sm'"
+          [helperText]="'Numbers only'"
+          [color]="'primary'"
+          [onlyNumbers]="true"
+        ></app-textfield>
+      </div>
+
+      <!-- Nickname (disabled) -->
+      <div class="w-64">
+        <app-textfield
+          [label]="'Disable field'"
+          [placeholder]="'Type your nickname'"
+          [control]="notRequiredControl"
+          [size]="'sm'"
+          [color]="'primary'"
+          [helperText]="'Helper text'"
+        ></app-textfield>
+      </div>
+    </div>
+
+    <!-- Column 2: Searchfield -->
+    <div class="flex-1 flex flex-col gap-4">
+      <h2 class="text-lg font-medium text-gray-500" style="font-family: Arial, sans-serif;">
+        Text Field with Icons
+      </h2>
+
+      <div class="w-96">
+        <app-searchfield
+          [label]="'Search'"
+          [placeholder]="'Search here'"
+          [control]="searchControl"
+          [size]="'sm'"
+          [color]="'primary'"
+          [iconStart]="'search'"
+          [iconEnd]="'mic'"
+        ></app-searchfield>
+      </div>
+
+      <div class="w-96">
+        <app-searchfield
+          [label]="'Search'"
+          [placeholder]="'Search here'"
+          [control]="searchControl1"
+          [size]="'sm'"
+          [color]="'primary'"
+          [iconStart]="'search'"
+        ></app-searchfield>
+      </div>
+
+      <div class="w-48">
+        <app-searchfield
+          [label]="'Password'"
+          [placeholder]="'Password'"
+          [control]="passwordControl"
+          [size]="'sm'"
+          [color]="'primary'"
+          [iconEnd]="'visibility'"
+        ></app-searchfield>
+      </div>
+    </div>
+
+    <!-- Column 3: Others (empty for now) -->
+    <div class="flex-1 flex flex-col gap-4">
+      <h2 class="text-lg font-medium text-gray-500" style="font-family: Arial, sans-serif;">
+        Others
+      </h2>
+
+      <div class="w-64">
+        <!-- Future components -->
+      </div>
+
+      <div class="w-64">
+        <!-- Future components -->
+      </div>
+    </div>
+  </div>
+</div>
+
