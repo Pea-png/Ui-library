@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
-import { TextfieldComponent, SearchfieldComponent } from 'my-ui-lib';
+import { TextfieldComponent, SearchfieldComponent, ButtonComponent } from 'my-ui-lib';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, TextfieldComponent, SearchfieldComponent],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, TextfieldComponent, SearchfieldComponent, ButtonComponent],
   templateUrl: './app.html',
 })
 export class AppComponent implements OnInit {
+
+   onPrimaryClick() {
+    console.log('Primary button clicked');
+  }
+
+  onOutlineClick() {
+    console.log('Outline button clicked');
+  }
+
   // ngModel example
   firstname: string = '';
 
