@@ -1,0 +1,29 @@
+<button
+  class="btn
+         btn--{{ variant }}
+         btn--{{ color }}
+         btn--{{ size }}"
+  [disabled]="disabled"
+  (click)="onClick.emit($event)"
+>
+  <!-- icon start -->
+  <span
+    *ngIf="iconStart"
+    class="btn__icon btn__icon--start material-symbols-outlined"
+  >
+    {{ iconStart }}
+  </span>
+
+  <ng-content></ng-content>
+
+  <!-- icon end -->
+  <span
+    *ngIf="iconEnd"
+    class="btn__icon btn__icon--end material-symbols-outlined"
+  >
+    {{ iconEnd }}
+  </span>
+</button>
+
+
+
