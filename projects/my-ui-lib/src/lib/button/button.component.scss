@@ -1,0 +1,137 @@
+.btn {
+  /* ================= Base ================= */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.05s;
+
+  /* ================= Sizes ================= */
+  &--xs {
+    height: 24px;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+
+  &--sm {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  &--md {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
+  /* ================= Colors (tokens) ================= */
+  &--primary   { --btn-color: #4e54a3; }
+  &--secondary { --btn-color: #27aae1; }
+  &--success   { --btn-color: #7cd885; }
+  &--error     { --btn-color: #ff574f; }
+  &--warning   { --btn-color: #ffd439; }
+
+  /* ================= Variants ================= */
+  &--solid {
+    background-color: var(--btn-color);
+    border-color: var(--btn-color);
+    color: #ffffff;
+  }
+
+  &--outline {
+    background: transparent;
+    border-color: var(--btn-color);
+    color: var(--btn-color);
+  }
+
+  &--text {
+    background: transparent;
+    border-color: transparent;
+    color: var(--btn-color);
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  /* warning solid ต้องใช้ตัวอักษรเข้ม */
+  &--solid.btn--warning {
+    color: #1f2937;
+  }
+
+  /* ================= States ================= */
+  &:hover:not(:disabled) {
+    filter: brightness(0.95);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px
+      color-mix(in srgb, var(--btn-color) 35%, transparent);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    transform: none;
+    filter: none;
+  }
+
+  /* disabled by variant */
+  &--solid:disabled {
+    background-color: #e5e7eb;
+    border-color: #e5e7eb;
+    color: #9ca3af;
+  }
+
+  &--outline:disabled {
+    background: transparent;
+    border-color: #e5e7eb;
+    color: #9ca3af;
+  }
+
+  &--text:disabled {
+    background: transparent;
+    color: #9ca3af;
+  }
+
+  /* ================= Icons (FIXED) ================= */
+  &__icon {
+    font-family: 'Material Symbols Outlined'; /* ⭐ สำคัญมาก */
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+
+    font-size: 16px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+
+    &--start {
+      margin-right: 4px;
+    }
+
+    &--end {
+      margin-left: 4px;
+    }
+  }
+}
+
+
+

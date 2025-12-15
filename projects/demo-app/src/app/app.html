@@ -103,20 +103,54 @@
       </div>
     </div>
 
-    <!-- Column 3: Others (empty for now) -->
-    <div class="flex-1 flex flex-col gap-4">
-      <h2 class="text-lg font-medium text-gray-500" style="font-family: Arial, sans-serif;">
-        Others
-      </h2>
+    <!-- Column 3: Button -->
+<div class="flex-1 flex flex-col gap-4">
+  <h2
+    class="text-lg font-medium text-gray-500"
+    style="font-family: Arial, sans-serif;"
+  >
+    Button
+  </h2>
 
-      <div class="w-64">
-        <!-- Future components -->
-      </div>
+  <div class="w-64 flex flex-col gap-3">
+    <!-- Solid primary -->
+    <app-button
+      [variant]="'solid'"
+      [color]="'primary'"
+      [size]="'md'"
+      [iconStart]="'search'"
+      (onClick)="onPrimaryClick()"
+    >
+      Search
+    </app-button>
+
+    <!-- Outline with start + end icon -->
+    <app-button
+      [variant]="'outline'"
+      [color]="'primary'"
+      [size]="'sm'"
+      [iconStart]="'filter_list'"
+      [iconEnd]="'arrow_forward'"
+      (onClick)="onOutlineClick()"
+    >
+      Filter
+    </app-button>
+
+    <!-- Text button -->
+    <app-button
+      [variant]="'text'"
+      [color]="'primary'"
+      [iconEnd]="'chevron_right'"
+    >
+      View more
+    </app-button>
+  </div>
+</div>
+
 
       <div class="w-64">
         <!-- Future components -->
       </div>
     </div>
   </div>
-</div>
 
